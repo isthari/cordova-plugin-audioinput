@@ -22,6 +22,9 @@ var exec = require('cordova/exec');
 var audioinput = {};
 
 var hasTypedArrays = 'Int16Array' in window && 'Float32Array' in window;
+// bug por el que a partir de cierta version no hay audio
+// https://github.com/edimuj/cordova-plugin-audioinput/issues/102
+hasTypedArrays=false
 
 // Audio formats
 audioinput.FORMAT = {
